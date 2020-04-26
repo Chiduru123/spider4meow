@@ -71,10 +71,6 @@ for url in urls:
             if time < time_threshold:
                 continue
             title = re.sub('\n', '', rec[0].find_all('a')[0]['title'])
-            if '【开车】' not in title or '车走' in title or '没货' in title:
-                continue
-            if '渴望' in title or '百利高' in title or '豪车' in title or '希兰蒂' in title or '罐' in title or '驱虫' in title or 'rawz' in title.lower() or '汤罐' in title:
-                msg_list.append(title + ' ' + href)
 
             res_list.append('\t'.join([id, href, title]))
 

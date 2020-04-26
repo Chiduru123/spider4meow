@@ -32,7 +32,7 @@ class Conn(object):
         if url != '':
             self.base_url = url
         else:
-            self.base_url = 'https://www.douban.com/group/search?cat=1013&group=656297&sort=time&q=%E3%80%90%E5%BC%80%E8%BD%A6%E3%80%91'
+            self.base_url = 'default-url1'
         self.context = ssl._create_default_https_context()
         if params != '':
             self.url = '{}?{}'.format(self.base_url, urlencode(params))
@@ -52,8 +52,8 @@ if os.path.exists(histInfo_file):
 res_list = []
 msg_list = []
 urls = [
-    'https://www.douban.com/group/search?cat=1013&group=656297&sort=time&q=%E3%80%90%E5%BC%80%E8%BD%A6%E3%80%91',  # 爱猫生活
-    'https://www.douban.com/group/search?cat=1013&group=656226&sort=time&q=%E5%BC%80%E8%BD%A6'          # 猫圈
+    'url1',
+    'url2'
 ]
 for url in urls:
     conn = Conn(url=url)
